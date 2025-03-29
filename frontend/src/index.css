@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* 🏡 Default Theme (Spirited Away) */
+:root {
+  /* Primary Colors */
+  --light: #F72C5B;
+  --light-hover: #D5264F;
+  --dark: #D41A4A;
+  --dark-hover: #BA173F;
+
+  /* Neutral Colors (Shared) */
+  --text-primary: #213547;      /* Light mode text */
+  --text-primary-dark: #FFFFFF;  /* Dark mode text */
+  --background: #FFFFFF;         /* Light mode bg */
+}
+
+/* 🌞 Light Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: var(--text-primary);
+    --bg: var(--background);
+  }
+  
+  button {
+    background-color: var(--light);
+  }
+  button:hover {
+    background-color: var(--light-hover);
+  }
+}
+
+/* 🌙 Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: var(--text-primary-dark);
+    --bg: #121212;               /* Deep dark background */
+    --surface: #1E1E1E;          /* Cards/containers */
+    --border: #2A2A2A;           /* Borders/divider */
+  }
+
+  button {
+    background-color: var(--dark);
+  }
+  button:hover {
+    background-color: var(--dark-hover);
+  }
+
+  /* Optional: Tailwind-like utility classes for dark mode */
+  .dark\:bg-surface {
+    background-color: var(--surface);
+  }
+  .dark\:text-muted {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
